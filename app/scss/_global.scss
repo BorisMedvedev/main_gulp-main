@@ -1,0 +1,164 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.4;
+  color: $dark-900;
+  background-color: $white;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1320px;
+}
+
+.btn {
+  padding: 10px 24px;
+  letter-spacing: 0.03em;
+  font-size: 18px;
+  color: $white;
+  background-color: $btn;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &--transparent {
+    background-color: $white;
+    border: 1px solid $btn;
+    color: $btn;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
+      border-radius: 6px;
+    }
+
+    &:hover {
+      background-color: $box-shadow-focus;
+    }
+
+    &:active {
+      background-color: $white;
+      color: rgba(99, 166, 14, 0.5);
+      box-shadow: inset 0 10px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.title {
+  font-family: "Ruda", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 31px;
+}
+
+.link-size {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 999;
+
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn-anime {
+  transition: background-color 0.2s;
+
+  &:focus {
+    box-shadow: 0 0 0 4px $green-200;
+    border-radius: 6px;
+  }
+
+  &:hover {
+    background-color: $hover-border;
+  }
+
+  &:active {
+    background: $btn;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+.anime-link {
+  transition: opacity 0.2s;
+
+  &:focus {
+    outline: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 0 3px $box-shadow-focus;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    color: $green-200;
+  }
+
+  &:active .simple-menu__svg {
+    fill: $green-200;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
